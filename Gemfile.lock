@@ -1,23 +1,53 @@
 GEM
   remote: https://www.rubygems.org/
   specs:
+    activesupport (4.2.4)
+      i18n (~> 0.7)
+      json (~> 1.7, >= 1.7.7)
+      minitest (~> 5.1)
+      thread_safe (~> 0.3, >= 0.3.4)
+      tzinfo (~> 1.1)
     addressable (2.3.8)
+    blather (1.1.4)
+      activesupport (>= 2.3.11)
+      eventmachine (>= 1.0.0)
+      girl_friday
+      niceogiri (~> 1.0)
+      nokogiri (~> 1.5, >= 1.5.6)
+    connection_pool (1.2.0)
+    eventmachine (1.0.8)
+    girl_friday (0.11.2)
+      connection_pool (~> 1.0)
+      rubinius-actor
     hipchat (1.5.1)
       httparty
       mimemagic
     httparty (0.13.3)
       json (~> 1.8)
       multi_xml (>= 0.5.2)
+    i18n (0.7.0)
     json (1.8.2)
     mime-types (1.25.1)
     mimemagic (0.3.0)
+    mini_portile (0.6.2)
+    minitest (5.8.0)
     multi_xml (0.5.5)
+    niceogiri (1.1.2)
+      nokogiri (~> 1.5)
+    nokogiri (1.6.6.2)
+      mini_portile (~> 0.6.0)
     rdoc (4.2.0)
       json (~> 1.4)
     redis (3.0.7)
     rest-client (1.6.8)
       mime-types (~> 1.16)
       rdoc (>= 2.4.2)
+    rubinius-actor (0.0.2)
+      rubinius-core-api
+    rubinius-core-api (0.0.1)
+    thread_safe (0.3.5)
+    tzinfo (1.2.2)
+      thread_safe (~> 0.1)
     unirest (1.1.2)
       addressable (~> 2.3.5)
       json (~> 1.8.1)
@@ -27,6 +57,10 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  blather
   hipchat
   redis (~> 3.0.1)
   unirest
+
+BUNDLED WITH
+   1.10.6
