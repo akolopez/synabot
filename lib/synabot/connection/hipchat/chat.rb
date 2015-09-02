@@ -24,11 +24,14 @@ module Synabot
 				end
 
 				message :chat?, :body, proc { |m| m.from != jid.stripped }, delay: nil do |m|
-					puts m
-		      body = Command::Parser.parse m
-		      to = m.from.stripped
-					reply = Blather::Stanza::Message.new(to, body, :chat)
-		      @client.write reply
+					message = m.body
+					if message.start_with?('[[') && message.end_with?(']]')
+						message = message[2..-3]
+			      body = Command::Parser.parse message
+			      to = m.from.stripped
+						reply = Blather::Stanza::Message.new(to, body, :chat)
+			      @client.write reply
+			    end
 				end
 			end
 		end
