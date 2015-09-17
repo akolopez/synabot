@@ -4,29 +4,25 @@ require_relative 'common/chat'
 module Synabot
 	module Connection
 		module Hipchat
-			class MUC < Chat
+			class SUC < Chat
 
 				def initialize(args)
 					$name = args[:name]
-					$rooms = args[:rooms]
 					@jid = args[:jid]
 					@password = args[:password]
 				end
 
 				def connect
-					@client = MUC.setup @jid, @password
+					@client = SUC.setup @jid, @password
 					@client.run
 				end
 
 				when_ready do
-					$rooms.each do |r|
-						puts 'JOINING ROOM ' + r
-						join r, $name
-					end
+					puts 'ready for 1 on 1 chat'
 				end
 
-				message :groupchat?, :body, proc { |m| m.from != jid.stripped }, delay: nil do |m|
-					self.create_reply m, 'groupchat'
+				message :chat?, :body, proc { |m| m.from != jid.stripped }, delay: nil do |m|
+					self.create_reply m, 'chat'
 				end
 
 			end

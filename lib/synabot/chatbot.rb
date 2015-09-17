@@ -1,7 +1,7 @@
 require 'yaml'
 require 'blather/client/dsl'
 require_relative 'connection/hipchat/muc'
-require_relative 'connection/hipchat/chat'
+require_relative 'connection/hipchat/suc'
 
 module Synabot
 
@@ -23,7 +23,7 @@ module Synabot
 		end
 
 		def run_private_bot
-			client = Synabot::Connection::Hipchat::Chat.new(name: @name, rooms: @rooms, jid: @jid, password: @password)
+			client = Synabot::Connection::Hipchat::SUC.new(name: @name, jid: @jid, password: @password)
 			client.connect
 		end
 
