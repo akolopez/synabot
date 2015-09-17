@@ -20,6 +20,8 @@ module Synabot
 					end
 				elsif command == '!register' || command == '!reg'
 					Synabot::Command::Type::Register.do(arg1, arg2)
+				elsif command == 'gif'
+					Synabot::Command::Type::Giphy.do(arg1)
 				end
 			end
 

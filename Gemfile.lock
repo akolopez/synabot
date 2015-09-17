@@ -57,10 +57,11 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  blather
-  hipchat
+  blather (~> 1.1.4)
+  hipchat (= 1.5.1)
   redis (~> 3.0.1)
-  unirest
+  rest-client
+  unirest (= 1.1.2)
 
 BUNDLED WITH
    1.10.6
