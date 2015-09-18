@@ -22,6 +22,8 @@ module Synabot
 					Synabot::Command::Type::Register.do(arg1, arg2)
 				elsif command == 'gif'
 					Synabot::Command::Type::Giphy.do(arg1)
+				elsif command == 'claire'
+					Synabot::Command::Type::Claire.do()
 				end
 			end
 
