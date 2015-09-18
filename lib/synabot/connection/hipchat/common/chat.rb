@@ -19,6 +19,7 @@ module Synabot
 			      @client.write reply 
 			    end
 				end
+
 			end
 		end
 	end

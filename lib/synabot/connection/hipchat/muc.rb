@@ -18,6 +18,8 @@ module Synabot
 					@client.run
 				end
 
+				disconnected { @client.connect }	
+
 				when_ready do
 					$rooms.each do |r|
 						puts 'JOINING ROOM ' + r

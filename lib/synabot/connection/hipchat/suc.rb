@@ -17,6 +17,8 @@ module Synabot
 					@client.run
 				end
 
+				disconnected { @client.connect }	
+
 				when_ready do
 					puts 'ready for 1 on 1 chat'
 				end
